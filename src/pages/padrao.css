@@ -1,0 +1,221 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  justify-content: flex-end;
+  margin: 0 auto;
+  width: 100%;
+}
+
+h1 {
+  color: rgb(12, 33, 100);
+  padding: 10px;
+  text-shadow: 3px 3px 15px rgba(255, 255, 255, 0.445);
+}
+
+.containerMenu {
+  align-items: center;
+  background: #ffffff4d;
+  box-shadow: 0 0 26px rgba(224, 226, 236, 0.8);
+  display: flex;
+  flex-direction: column;
+  float: left;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 20%;
+}
+
+.containerPesquisa {
+  align-items: center;
+  background: linear-gradient(123.66deg, #0039e577 12.08%, #00d7e2b4 86.52%);
+  box-shadow: 0 0 26px rgba(224, 226, 236, 0.8);
+  display: flex;
+  float: right;
+  height: 20%;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  width: 80%;
+}
+
+.inputPesquisa {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #003be5;
+  border-radius: 100px;
+  box-shadow: 0 0 26px rgba(24, 24, 75, 0.8);
+  box-sizing: border-box;
+  color: #003be5;
+  font-size: 20px;
+  font-weight: 700;
+
+  /* height: auto; */
+  padding: 10px 20px;
+  width: 600px;
+}
+
+.btnPesquisa {
+  background: #012181bd 12.08%;
+  border-radius: 100px;
+  box-shadow: 0 0 26px rgba(24, 24, 75, 0.8);
+  color: rgba(255, 255, 255, 0.781);
+  font-size: 20px;
+  font-weight: 600;
+  height: auto;
+  margin: 0 100px 0 50px;
+  padding: 10px 30px;
+  width: auto;
+}
+
+.btnPesquisa:hover {
+  background-color: rgba(250, 0, 0, 0.61);
+}
+
+.containerConteudo {
+  background: rgba(255, 255, 255, 0.788);
+  box-shadow: 0 0 26px rgba(224, 226, 236, 0.8);
+  height: 80%;
+  position: fixed;
+  top: 20%;
+  width: 80%;
+}
+
+/* .boxLogin {
+  align-items: center;
+  background:rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 30px;
+  height: 450px;
+  justify-content: space-around;
+  margin: auto;
+  padding: 100px;
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+  width: 750px;
+} */
+
+/*
+#btnLogin {
+  line-height: 20px;
+  letter-spacing: 0.03em;
+  text-align: center;
+  transition-duration: 0.4s;
+  width: 500px;
+} */
+
+/* .pesquisa {
+  position: absolute;
+width: 77px;
+height: 16px;
+left: 84px;
+top: 277px;
+color: #444955;
+}
+
+.favoritos {
+  position: absolute;
+width: 75px;
+height: 16px;
+left: 84px;
+top: 354px;
+color: #444955;
+}
+
+.perfil {
+position: absolute;
+width: 42px;
+height: 16px;
+left: 84px;
+top: 431px;
+color: #444955;
+}
+
+.carregandoMenu {
+  position: absolute;
+width: 119px;
+height: 18px;
+left: 92px;
+top: 663px;
+text-align: center;
+
+color: #003BE5;
+} */
+
+/*
+.form, .header, .card {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+input, textarea, option, select {
+  border: 2px solid red;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 8px 0;
+  padding: 12px 20px;
+  width: 100%;
+}
+
+label {
+  width: 100%;
+}
+
+/* #check {
+  height: 1.15em;
+  margin: 0;
+  margin-right: 15px;
+  padding: 3px;
+  width: 1.15em;
+} */
+
+/* button {
+  background-color: rgb(87, 17, 32);
+  border-color: rgb(150, 0, 0);
+  border-radius: 4px;
+  font-size: 16px;
+  margin: 4px 2px;
+  padding: 16px 32px;
+  text-align: center;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: rgb(200, 0, 0);
+}
+
+h1 {
+  color: rgb(186, 109, 250);
+  font-size: 70px;
+  height: 100px;
+  margin: 0;
+  position: absolute;
+}
+
+.inputArea {
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 0 4px 19px rgba(255, 0, 0, 0.8);
+  display: flex;
+  flex-flow: column wrap;
+  position: absolute;
+  top: 100px;
+  width: 80%;
+}
+
+.visualization {
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 0 4px 19px rgba(255, 0, 0, 0.8);
+  color: azure;
+  display: flex;
+  flex-flow: column wrap;
+  position: absolute;
+  top: 800px;
+  width: 80%;
+} */
