@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
 import './padrao.css';
+import Header from '../components/Header';
 
 class Album extends Component {
   render() {
     return (
       <div className="container" data-testid="page-album">
-        <header className="containerPesquisa">
-          <label htmlFor="inputPesquisa">
-            <input type="text" className="inputPesquisa" placeholder="Escreva seu nome" />
-          </label>
-          <button type="button" className="btnPesquisa">PROCURAR</button>
-        </header>
+        <Header />
         <nav className="containerMenu">
           <h1>Pesquisa</h1>
           <h1>Favoritos</h1>

@@ -30,16 +30,33 @@ h1 {
 }
 
 .containerPesquisa {
-  align-items: center;
+  align-items: flex-end;
   background: linear-gradient(123.66deg, #0039e577 12.08%, #00d7e2b4 86.52%);
   box-shadow: 0 0 26px rgba(224, 226, 236, 0.8);
   display: flex;
-  float: right;
+  flex-flow: row wrap;
   height: 20%;
   justify-content: flex-end;
   position: fixed;
   top: 0;
   width: 80%;
+}
+
+.pPesquisa {
+  background: rgba(12, 12, 12, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 0 26px rgba(24, 24, 75, 0.8);
+  color: #101113d8;
+  font-size: 25px;
+  font-weight: 500;
+  height: 30px;
+  line-height: 1.2em;
+  margin: 0 20px 20px;
+  padding: 0 70px;
+  right: 20px;
+  text-align: end;
+  vertical-align: sub;
+  width: 400px;
 }
 
 .inputPesquisa {

@@ -3,7 +3,7 @@ body {
   background-image: url('../images/jack-white-lolla-600x398.jpg');
   background-size: cover;
   color: rgb(12, 33, 100);
-  font-family: 'Epilogue';
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
