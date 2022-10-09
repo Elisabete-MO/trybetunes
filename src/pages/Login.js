@@ -36,7 +36,7 @@ class Login extends Component {
   render() {
     const { isDisable, name, loading } = this.state;
     return (
-      // <>
+    // <>
       loading ? <CarregandoLogin />
         : (
           <div className="boxLogin" data-testid="page-login">
