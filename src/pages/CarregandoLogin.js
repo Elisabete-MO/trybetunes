@@ -5,7 +5,7 @@ class CarregandoLogin extends React.Component {
   render() {
     return (
       <div className="carregandoLogin">
-        <h1>Carregando...</h1>
+        <h1 className="h1carregandoLogin">Carregando...</h1>
       </div>
     );
   }

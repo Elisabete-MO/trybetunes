@@ -7,6 +7,7 @@ import Album from './pages/Album';
 import Favorites from './pages/Favorites';
 import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
+import CarregandoLogin from './pages/CarregandoLogin';
 import NotFound from './pages/NotFound';
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
           <Route exact path="/profile" component={ Profile } />
           <Route exact path="/profile/edit" component={ ProfileEdit } />
           <Route exact path="/" component={ Login } />
+          <Route path="/carregandoLogin" component={ CarregandoLogin } />
           <Route path="*" component={ NotFound } />
         </Switch>
       </main>
