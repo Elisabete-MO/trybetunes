@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../pages/padrao.css';
 import { getUser } from '../services/userAPI';
+import searchAlbumsAPI from '../services/searchAlbumsAPI';
 
 class Header extends Component {
   state = {
+    dados: [],
     isDisable: true,
     chave: '',
     name: null,
     loading: true,
+    artist: '',
   };
 
   async componentDidMount() {
@@ -20,11 +23,18 @@ class Header extends Component {
   }
 
   handleClick = async () => {
-    // const { history } = this.props;
-    // const { name } = this.state;
-    // this.setState({ loading: true });
-    // await createUser({ name });
-    // history.push('/search');
+    const { chave } = this.state;
+    const result = await searchAlbumsAPI(chave);
+    this.setState({
+      loading: true,
+      dados: result,
+      artist: chave,
+      chave: '',
+    }, () => {
+      this.setState({
+        loading: false,
+      });
+    });
   };
 
   handleChange = (event) => {
@@ -42,7 +52,7 @@ class Header extends Component {
   };
 
   render() {
-    const { isDisable, name, chave, loading } = this.state;
+    const { isDisable, name, chave, loading, dados, artist } = this.state;
     return (
       <header className="containerPesquisa" data-testid="header-component">
         <label htmlFor="inputPesquisa">
@@ -51,6 +61,7 @@ class Header extends Component {
             className="inputPesquisa"
             data-testid="search-artist-input"
             placeholder="Digite a sua pesquisa"
+            hidden={ loading }
             value={ chave }
             onChange={ this.handleChange }
           />
@@ -59,6 +70,7 @@ class Header extends Component {
           type="button"
           data-testid="search-artist-button"
           className="btnPesquisa"
+          hidden={ loading }
           disabled={ isDisable }
           onClick={ this.handleClick }
         >
@@ -83,6 +95,20 @@ class Header extends Component {
           </Link>
           <Link to="/profile" data-testid="link-to-profile" className="link">Perfil</Link>
         </nav>
+        <main className="containerConteudo">
+          <p className="link" hidden={ loading }>
+            Resultado de álbuns de:
+            {' '}
+            { artist }
+          </p>
+          {dados.length !== 0 ? dados.map((data, index) => ((
+            <li className="inputPesquisa" key={ index }>
+              {data.collectionName}
+              <Link to={ `/album/${data.collectionId}` }>
+                <p data-testid={ `link-to-album-${data.collectionId}` }>Ver mais</p>
+              </Link>
+            </li>))) : <p className="pPesquisa">Nenhum álbum foi encontrado</p>}
+        </main>
 
       </header>
     );

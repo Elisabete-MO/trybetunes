@@ -7,7 +7,6 @@ class Profile extends Component {
     return (
       <div className="container" data-testid="page-profile">
         <Header />
-        <main className="containerConteudo" />
       </div>
     );
   }
