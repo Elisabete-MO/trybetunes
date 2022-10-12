@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
-import Carregando from './Carregando';
 
 class MusicCard extends Component {
   state = {
-    carregando: false,
+    loading: false,
     favorite: false,
   };
 
@@ -20,23 +19,21 @@ class MusicCard extends Component {
   getFavorite = async () => {
     const { music } = this.props;
     const favorites = await getFavoriteSongs();
-    const wasFavorite = favorites.find((aux) => (
+    const heart = favorites.find((aux) => (
       aux.trackId === music.trackId));
-    if (wasFavorite) {
-      this.setState(
-        {
-          favorite: wasFavorite,
-        },
-      );
+    if (heart) {
+      this.setState({
+        favorite: heart,
+      });
     }
   };
 
-  handleSave = async ({ event }) => {
+  handleSave = async ({ target }) => {
     const { music, att } = this.props;
     this.setState({
-      carregando: true,
+      loading: true,
     });
-    if (event.checked) {
+    if (target.checked) {
       await addSong(music);
       this.setState({
         favorite: true,
@@ -48,23 +45,22 @@ class MusicCard extends Component {
       });
     }
     this.setState({
-      carregando: false,
+      loading: false,
     });
     att();
   };
 
   render() {
     const { music } = this.props;
-    const { carregando, favorite } = this.state;
+    const { loading, favorite } = this.state;
     return (
-      !carregando
+      !loading
         ? (
           <div>
             <p>{music.trackName}</p>
             <audio data-testid="audio-component" src="{previewUrl}" controls>
               <track kind="captions" />
               O seu navegador não suporta o elemento
-              {' '}
               <code>audio</code>
               .
             </audio>
@@ -78,7 +74,7 @@ class MusicCard extends Component {
                 checked={ favorite }
               />
             </label>
-          </div>) : <Carregando />
+          </div>) : 'Carregando...'
     );
   }
 }
