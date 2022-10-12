@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import './padrao.css';
+import './padrao.css';
 import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import MusicCard from '../components/MusicCard';
@@ -12,8 +12,8 @@ class Album extends Component {
   };
 
   async componentDidMount() {
-    const { data } = this.props;
-    const value = data.params.id;
+    const { match } = this.props;
+    const value = match.params.id;
     const album = await getMusics(value);
     this.setState({
       music: album.filter((_track, index) => index !== 0),
@@ -26,13 +26,13 @@ class Album extends Component {
     return (
       <div className="container" data-testid="page-album">
         <Header />
-        <main className="containerConteudo">
+        <main className="containerConteudoAlbum">
           <div data-testid="page-album">
-            <h2 data-testid="artist-name">{ albumInf.artistName }</h2>
-            <h3 data-testid="album-name">{ albumInf.collectionName }</h3>
+            <p data-testid="artist-name">{ albumInf.artistName }</p>
+            <p data-testid="album-name">{ albumInf.collectionName }</p>
             <ul>
               {music.map((aux) => (
-                <li key={ aux.trackId }><MusicCard music={ music } /></li>))}
+                <li key={ aux.trackId }><MusicCard music={ aux } /></li>))}
             </ul>
           </div>
         </main>
@@ -42,7 +42,7 @@ class Album extends Component {
 }
 
 Album.propTypes = {
-  data: PropTypes.shape({
+  match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string.isRequired,
     }).isRequired,

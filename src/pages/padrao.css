@@ -111,6 +111,19 @@
   width: 80%;
 }
 
+.containerConteudoAlbum {
+  background: rgba(255, 255, 255, 0.788);
+  box-shadow: 0 0 26px rgba(224, 226, 236, 0.8);
+  display: grid;
+  flex-wrap: row wrap;
+  justify-content: center;
+  height: 80%;
+  position: fixed;
+  text-align: center;
+  top: 20%;
+  width: 80%;
+}
+
 /* .boxLogin {
   align-items: center;
   background:rgba(255, 255, 255, 0.2);

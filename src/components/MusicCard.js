@@ -31,12 +31,12 @@ class MusicCard extends Component {
     }
   };
 
-  handleSave = async ({ target }) => {
+  handleSave = async ({ event }) => {
     const { music, att } = this.props;
     this.setState({
       carregando: true,
     });
-    if (target.checked) {
+    if (event.checked) {
       await addSong(music);
       this.setState({
         favorite: true,
