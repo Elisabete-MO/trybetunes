@@ -27,7 +27,7 @@ class Favorites extends Component {
     return (
       <div className="container" data-testid="page-favorites">
         <Header />
-        <div data-testid="page-favorites">
+        <div>
           { loading ? 'Carregando...' : (
             elements.map((element) => (
               <li key={ element.trackId }>

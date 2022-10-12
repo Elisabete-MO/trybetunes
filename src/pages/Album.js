@@ -27,7 +27,7 @@ class Album extends Component {
       <div className="container" data-testid="page-album">
         <Header />
         <main className="containerConteudoAlbum">
-          <div data-testid="page-album">
+          <div>
             <p data-testid="artist-name">{ albumInf.artistName }</p>
             <p data-testid="album-name">{ albumInf.collectionName }</p>
             <ul>
